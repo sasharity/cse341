@@ -12,7 +12,16 @@
   "type": "commonjs",
   "dependencies": {
     "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "mongodb": "7.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sasharity/cse341.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sasharity/cse341/issues"
+  },
+  "homepage": "https://github.com/sasharity/cse341#readme"
 }
