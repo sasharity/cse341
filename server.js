@@ -1,5 +1,5 @@
 const express = require("express");
-const mongodb = require("./contacts-api/data/database");
+const mongodb = require("./data/database");
 
 const swaggerUi = require("swagger-ui-express");
 const swaggerFile = require("./contacts-api/swagger-output.json");
@@ -12,9 +12,9 @@ const port = process.env.PORT || 8080;
 
 app.use(express.json());
 
-app.use("/", require("./contacts-api/routes/index"))
+app.use("/", require("./routes/index"))
 
-app.use("/contacts", require("./contacts-api/routes/contactsRoute"));
+app.use("/contacts", require("./routes/contactsRoute"));
 
 // app.get("/test", (req,res)=>{
 //   res.send("Test route works")
