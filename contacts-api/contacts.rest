@@ -7,3 +7,31 @@ Accept: application/json
 # Get a single contact by id
 GET http://localhost:8080/contacts/69aca9712f539bec4afcb56c
 Accept: application/json
+
+# Create contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Sasha",
+    "lastName": "Yusuf",
+    "email": "iruogheneomaraye@gmail.com",
+    "favoriteColor": "Pink",
+    "birthday": "1995-10-09"
+}
+
+# Update a contact
+PUT http://localhost:8080/contacts/69aca9712f539bec4afcb56c
+Content-Type: application/json
+
+{
+  "firstName": "Sasha",
+    "lastName": "Yusuf",
+    "email": "iruogheneomaraye@gmail.com",
+    "favoriteColor": "Pink",
+    "birthday": "1995-10-09"
+}
+
+# Remove contact
+DELETE http://localhost:8080/contacts/69aca9712f539bec4afcb56c
+
