@@ -1,8 +1,9 @@
 const express = require("express");
 const mongodb = require("./data/database");
-const swagger = require("./swagger");
+
 const swaggerUi = require("swagger-ui-express");
 const swaggerFile = require("./swagger-output.json");
+
 require("dotenv").config();
 
 
@@ -14,6 +15,10 @@ app.use(express.json());
 app.use("/", require("./routes/index"))
 
 app.use("/contacts", require("./routes/contactsRoute"));
+
+// app.get("/test", (req,res)=>{
+//   res.send("Test route works")
+// });
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
