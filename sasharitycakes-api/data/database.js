@@ -1,4 +1,6 @@
 const MongoClient = require("mongodb").MongoClient;
+require("dotenv").config();
+
 
 let database;
 
@@ -7,7 +9,7 @@ const initDb = async () => {
 
   try {
     const client = await MongoClient.connect(process.env.MONGODB_URI);
-    database = client.db();
+    database = client.db("sasharitycakesDB");
     console.log("Database connected");
   } catch (err) {
     console.error(err);

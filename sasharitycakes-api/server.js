@@ -10,11 +10,13 @@ const port = process.env.PORT || 8080;
 
 app.use(express.json());
 
-app.use("/", require("./routes/index"));
-app.use("/orders", require("./routes/ordersRoute"));
-app.use("/products", require("./routes/productsRoute"));
+
+app.use("/", require("./routes/ordersRoute"));
+app.use("/", require("./routes/productsRoute"));
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
+
+// app.use("/", require("./routes/index"));
 
 mongodb.initDb().then(() => {
   app.listen(port, () => {

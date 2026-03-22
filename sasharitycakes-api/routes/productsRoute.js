@@ -3,28 +3,37 @@ const router = express.Router();
 const controller = require("../controllers/productsController");
 const { validateProduct } = require("../middleware/validate");
 
-/* #swagger.tags = ['Products'] */
+/**
+ * #swagger.tags = ['Products']
+ * #swagger.path = '/products'
+ */
 
 // GET ALL PRODUCTS
-router.get("/", controller.getAll);
+router.get("/products", (req, res) => {
+  /* #swagger.tags = ['Products'] */
+  
+  controller.getAll(req, res);
+});
+
+// GET SINGLE Product
+router.get("/products/:id", controller.getSingle);
 /* 
-  #swagger.summary = 'Get all products'
+  #swagger.summary = 'Get a single Product by ID'
 */
 
-// CREATE PRODUCT
-router.post("/", validateProduct, controller.createProduct);
+// CREATE Product
+router.post("/products", validateProduct, controller.createProduct);
+
+// UPDATE ORDER
+router.put("/products/:id", validateProduct, controller.updateProduct);
 /* 
-  #swagger.summary = 'Create a new product'
-  #swagger.parameters['obj'] = {
-    in: 'body',
-    description: 'Product data',
-    required: true,
-    schema: {
-      name: 'Chocolate Cake',
-      category: 'Cake',
-      price: 20000
-    }
-  }
+  #swagger.summary = 'Update an order'
+*/
+
+// DELETE Product
+router.delete("/products/:id", controller.deleteProduct);
+/* 
+  #swagger.summary = 'Delete an Product'
 */
 
 module.exports = router;
