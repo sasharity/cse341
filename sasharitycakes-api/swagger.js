@@ -5,8 +5,8 @@ const doc = {
     title: "Sasharity Cakes API",
     description: "API for managing cakes, orders, and products"
   },
-    host: "localhost:8080",
-  schemes: ["http"]
+    host: "sasharitycakes-api.onrender.com/:8080",
+  schemes: ["https"]
 };
 
 const outputFile = "./swagger-output.json";

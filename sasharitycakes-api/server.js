@@ -16,7 +16,7 @@ app.use("/", require("./routes/productsRoute"));
 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
-// app.use("/", require("./routes/index"));
+app.use("/", require("./routes/index"));
 
 mongodb.initDb().then(() => {
   app.listen(port, () => {
