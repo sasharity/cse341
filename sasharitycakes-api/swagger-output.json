@@ -5,10 +5,10 @@
     "description": "API for managing cakes, orders, and products",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "sasharitycakes-api.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/orders": {
@@ -178,9 +178,6 @@
         }
       },
       "post": {
-        "tags": [
-          "Products"
-        ],
         "description": "",
         "parameters": [
           {
@@ -217,9 +214,6 @@
     },
     "/products/{id}": {
       "get": {
-        "tags": [
-          "Products"
-        ],
         "description": "",
         "parameters": [
           {
@@ -230,15 +224,15 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "put": {
-        "tags": [
-          "Products"
-        ],
         "description": "",
         "parameters": [
           {
@@ -267,15 +261,18 @@
           }
         ],
         "responses": {
+          "204": {
+            "description": "No Content"
+          },
           "400": {
             "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
       "delete": {
-        "tags": [
-          "Products"
-        ],
         "description": "",
         "parameters": [
           {
@@ -286,8 +283,11 @@
           }
         ],
         "responses": {
-          "default": {
-            "description": ""
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
