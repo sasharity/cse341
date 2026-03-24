@@ -16,7 +16,7 @@ router.get("/products", (req, res) => {
 });
 
 // CREATE PRODUCT
-router.get("/products:id", (req, res) => {
+router.get("/products/:id", (req, res) => {
   /* #swagger.tags = ['Products'] */
   
   controller.getSingle(req, res);
@@ -30,14 +30,14 @@ router.post("/products", validateProduct, (req, res) => {
 });
 
 // PUT
-router.put("/products:id", validateProduct, (req, res) => {
+router.put("/products/:id", validateProduct, (req, res) => {
   /* #swagger.tags = ['Products'] */
 
   controller.updateProduct(req, res);
 });
 
 // DELETE
-router.delete("/products:id", (req, res) => {
+router.delete("/products/:id", (req, res) => {
   /* #swagger.tags = ['Products'] */
   
   controller.deleteProduct(req, res);
