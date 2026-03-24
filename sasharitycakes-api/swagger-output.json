@@ -215,7 +215,7 @@
         }
       }
     },
-    "/{productsid}": {
+    "/products/{id}": {
       "get": {
         "tags": [
           "Products"
@@ -223,7 +223,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "productsid",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -245,7 +245,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "productsid",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
@@ -288,7 +288,7 @@
         "description": "",
         "parameters": [
           {
-            "name": "productsid",
+            "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
