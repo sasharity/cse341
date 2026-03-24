@@ -6,13 +6,15 @@ const doc = {
     description: "API for managing cakes, orders, and products"
   },
     host: "sasharitycakes-api.onrender.com",
-    schemes: ["https"]
+    schemes: ["https"],
+    
 };
 
 const outputFile = "./swagger-output.json";
 
 const endpointsFiles = [
-  "./routes/ordersRoute.js", "./routes/productsRoute.js"
+  "./routes/ordersRoute.js",
+  "./routes/productsRoute.js"
 ];
 
 swaggerAutogen(outputFile, endpointsFiles, doc);

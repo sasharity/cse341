@@ -18,8 +18,8 @@ const getAll = async (req, res) => {
 // For the get single 
 const getSingle = async (req, res) => {
     try {
-      const db = mongodb.getDb();
-      const id = new ObjectId(req.params.id);
+        const db = mongodb.getDb();
+        const id = new ObjectId(req.params.id);
         const result = await db.collection("orders").find({_id: id});
       
         const data = await result.toArray();

@@ -15,25 +15,32 @@ router.get("/products", (req, res) => {
   controller.getAll(req, res);
 });
 
-// GET SINGLE Product
-router.get("/products/:id", controller.getSingle);
-/* 
-  #swagger.summary = 'Get a single Product by ID'
-*/
+// CREATE PRODUCT
+router.get("/products:id", (req, res) => {
+  /* #swagger.tags = ['Products'] */
+  
+  controller.getSingle(req, res);
+});
 
-// CREATE Product
-router.post("/products", validateProduct, controller.createProduct);
+// POST
+router.post("/products", validateProduct, (req, res) => {
+  /* #swagger.tags = ['Products'] */
+  
+  controller.createProduct(req, res);
+});
 
-// UPDATE ORDER
-router.put("/products/:id", validateProduct, controller.updateProduct);
-/* 
-  #swagger.summary = 'Update an order'
-*/
+// PUT
+router.put("/products:id", validateProduct, (req, res) => {
+  /* #swagger.tags = ['Products'] */
 
-// DELETE Product
-router.delete("/products/:id", controller.deleteProduct);
-/* 
-  #swagger.summary = 'Delete an Product'
-*/
+  controller.updateProduct(req, res);
+});
+
+// DELETE
+router.delete("/products:id", (req, res) => {
+  /* #swagger.tags = ['Products'] */
+  
+  controller.deleteProduct(req, res);
+});
 
 module.exports = router;

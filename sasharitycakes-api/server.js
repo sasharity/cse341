@@ -18,6 +18,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 app.use("/", require("./routes/index"));
 
+
 mongodb.initDb().then(() => {
   app.listen(port, () => {
     console.log(`Server running on port ${port}`);

@@ -178,6 +178,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Products"
+        ],
         "description": "",
         "parameters": [
           {
@@ -212,12 +215,15 @@
         }
       }
     },
-    "/products/{id}": {
+    "/{productsid}": {
       "get": {
+        "tags": [
+          "Products"
+        ],
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "productsid",
             "in": "path",
             "required": true,
             "type": "string"
@@ -233,10 +239,13 @@
         }
       },
       "put": {
+        "tags": [
+          "Products"
+        ],
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "productsid",
             "in": "path",
             "required": true,
             "type": "string"
@@ -273,10 +282,13 @@
         }
       },
       "delete": {
+        "tags": [
+          "Products"
+        ],
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "productsid",
             "in": "path",
             "required": true,
             "type": "string"
