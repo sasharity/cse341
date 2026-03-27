@@ -13,6 +13,10 @@
   "paths": {
     "/orders": {
       "get": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Get all orders",
         "description": "",
         "responses": {
           "200": {
@@ -24,6 +28,10 @@
         }
       },
       "post": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Create an order",
         "description": "",
         "parameters": [
           {
@@ -64,14 +72,26 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "githubAuth": []
+          }
+        ]
       }
     },
     "/orders/{id}": {
       "get": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Get a order by Id",
         "description": "",
         "parameters": [
           {
@@ -91,6 +111,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Update an order",
         "description": "",
         "parameters": [
           {
@@ -137,12 +161,24 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "githubAuth": []
+          }
+        ]
       },
       "delete": {
+        "tags": [
+          "Orders"
+        ],
+        "summary": "Delete an order",
         "description": "",
         "parameters": [
           {
@@ -156,10 +192,18 @@
           "204": {
             "description": "No Content"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "githubAuth": []
+          }
+        ]
       }
     },
     "/products": {
@@ -167,6 +211,7 @@
         "tags": [
           "Products"
         ],
+        "summary": "Get all products",
         "description": "",
         "responses": {
           "200": {
@@ -181,6 +226,7 @@
         "tags": [
           "Products"
         ],
+        "summary": "Create a product",
         "description": "",
         "parameters": [
           {
@@ -209,10 +255,18 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "githubAuth": []
+          }
+        ]
       }
     },
     "/products/{id}": {
@@ -220,6 +274,7 @@
         "tags": [
           "Products"
         ],
+        "summary": "Get a product by Id",
         "description": "",
         "parameters": [
           {
@@ -242,6 +297,7 @@
         "tags": [
           "Products"
         ],
+        "summary": "Update a product",
         "description": "",
         "parameters": [
           {
@@ -276,15 +332,24 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "githubAuth": []
+          }
+        ]
       },
       "delete": {
         "tags": [
           "Products"
         ],
+        "summary": "Delete a product",
         "description": "",
         "parameters": [
           {
@@ -298,10 +363,67 @@
           "204": {
             "description": "No Content"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "500": {
             "description": "Internal Server Error"
           }
+        },
+        "security": [
+          {
+            "githubAuth": []
+          }
+        ]
+      }
+    },
+    "/auth/github": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Login with GitHub",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
         }
+      }
+    },
+    "/auth/github/callback": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "GitHub callback",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Logout user",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "githubAuth": {
+        "type": "oauth2"
       }
     }
   }
